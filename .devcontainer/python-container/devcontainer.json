@@ -24,7 +24,11 @@
         "matangover.mypy",
         "streetsidesoftware.code-spell-checker",
         "donjayamanne.githistory",
-        "tamasfe.even-better-toml"
+        "tamasfe.even-better-toml",
+        "mads-hartmann.bash-ide-vscode",
+        "rogalmic.bash-debug",
+        "foxundermoon.shell-format",
+        "timonwong.shellcheck"
       ],
       "settings": {
         "python.defaultInterpreterPath": "${workspaceFolder}/python-src/.venv/bin/python",
@@ -46,6 +50,9 @@
           "zsh": {
             "path": "/bin/zsh"
           }
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format"
         }
       }
     }
