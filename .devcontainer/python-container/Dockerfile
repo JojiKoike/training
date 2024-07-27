@@ -7,8 +7,8 @@ ENV PATH="$RYE_HOME/shims:$PATH"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        ca-certificates \
-        curl imagemagick
+    ca-certificates \
+    curl imagemagick
 
 SHELL [ "/bin/bash", "-o", "pipefail", "-c" ]
 RUN curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash && \
