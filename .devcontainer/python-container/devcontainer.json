@@ -41,6 +41,11 @@
           },
           "editor.formatOnSave": true
         },
+          "notebook.formatOnSave.enabled": true,
+          "notebook.codeActionsOnSave": {
+            "notebook.source.fixAll": true,
+            "notebook.source.organizeImports": true
+          },
         "mypy.dmypyExecutable": "${workspaceFolder}/python-src/.venv/bin/mypy",
         "mypy.runUsingActiveInterpreter": true,
         "files.insertFinalNewline": true,
