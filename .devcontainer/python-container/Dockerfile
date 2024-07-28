@@ -18,7 +18,7 @@ RUN curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash && \
 FROM mcr.microsoft.com/vscode/devcontainers/base:bookworm
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    imagemagick rename libgdal-dev gcc g++
+    imagemagick rename libgdal-dev gcc g++ libspatialindex-dev
 
 COPY --from=builder /opt/rye /opt/rye
 

@@ -28,6 +28,7 @@ asttokens==2.4.1
 async-lru==2.0.4
     # via jupyterlab
 attrs==23.2.0
+    # via fiona
     # via jsonschema
     # via rasterio
     # via referencing
@@ -37,27 +38,38 @@ beautifulsoup4==4.12.3
     # via nbconvert
 bleach==6.1.0
     # via nbconvert
+branca==0.7.2
+    # via folium
 cartopy==0.23.0
     # via satellite-data-analytics
 certifi==2024.7.4
+    # via fiona
     # via httpcore
     # via httpx
+    # via netcdf4
     # via pyogrio
     # via pyproj
     # via rasterio
     # via requests
 cffi==1.16.0
     # via argon2-cffi-bindings
+cftime==1.6.4
+    # via netcdf4
 charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via click-plugins
     # via cligj
+    # via fiona
+    # via geomet
     # via mercantile
     # via rasterio
+    # via sentinelsat
 click-plugins==1.1.1
+    # via fiona
     # via rasterio
 cligj==0.7.2
+    # via fiona
     # via rasterio
 clint==0.5.1
     # via mamba
@@ -78,26 +90,42 @@ decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
+deprecated==1.2.14
+    # via openeo
+earthpy==0.9.4
+    # via satellite-data-analytics
 executing==2.0.1
     # via stack-data
 fastjsonschema==2.20.0
     # via nbformat
+fiona==1.9.6
+    # via satellite-data-analytics
+folium==0.17.0
+    # via satellite-data-analytics
 fonttools==4.53.1
     # via matplotlib
 fqdn==1.5.1
     # via jsonschema
+ftree==1.0.2
+    # via satellite-data-analytics
 gdal==3.6.2
     # via satellite-data-analytics
 geographiclib==2.0
     # via geopy
 geojson==3.1.0
     # via satellite-data-analytics
+    # via sentinelsat
+geomet==1.1.0
+    # via sentinelsat
 geopandas==1.0.1
+    # via earthpy
     # via satellite-data-analytics
 geopy==2.4.1
     # via contextily
 h11==0.14.0
     # via httpcore
+html2text==2024.2.26
+    # via sentinelsat
 httpcore==1.0.5
     # via httpx
 httpx==0.27.0
@@ -107,6 +135,8 @@ idna==3.7
     # via httpx
     # via jsonschema
     # via requests
+imageio==2.34.2
+    # via scikit-image
 ipykernel==6.29.5
     # via jupyter
     # via jupyter-console
@@ -124,6 +154,8 @@ isoduration==20.11.0
 jedi==0.19.1
     # via ipython
 jinja2==3.1.4
+    # via branca
+    # via folium
     # via jupyter-server
     # via jupyterlab
     # via jupyterlab-server
@@ -185,6 +217,8 @@ jupyterlab-widgets==3.0.11
     # via ipywidgets
 kiwisolver==1.4.5
     # via matplotlib
+lazy-loader==0.4
+    # via scikit-image
 mamba==0.11.3
     # via satellite-data-analytics
 markupsafe==2.1.5
@@ -193,6 +227,7 @@ markupsafe==2.1.5
 matplotlib==3.9.1
     # via cartopy
     # via contextily
+    # via earthpy
     # via seaborn
 matplotlib-inline==0.1.7
     # via ipykernel
@@ -214,6 +249,10 @@ nbformat==5.10.4
     # via nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+netcdf4==1.7.1.post1
+    # via satellite-data-analytics
+networkx==3.3
+    # via scikit-image
 notebook==7.2.1
     # via jupyter
 notebook-shim==0.2.4
@@ -221,18 +260,31 @@ notebook-shim==0.2.4
     # via notebook
 numpy==2.0.1
     # via cartopy
+    # via cftime
     # via contourpy
+    # via earthpy
+    # via folium
     # via geopandas
+    # via imageio
     # via matplotlib
+    # via netcdf4
+    # via openeo
     # via pandas
+    # via pygeos
     # via pyogrio
     # via rasterio
+    # via rioxarray
     # via satellite-data-analytics
+    # via scikit-image
     # via scikit-learn
     # via scipy
     # via seaborn
     # via shapely
     # via snuggs
+    # via tifffile
+    # via xarray
+openeo==0.31.0
+    # via satellite-data-analytics
 overrides==7.7.0
     # via jupyter-server
 packaging==24.1
@@ -242,15 +294,21 @@ packaging==24.1
     # via jupyter-server
     # via jupyterlab
     # via jupyterlab-server
+    # via lazy-loader
     # via matplotlib
     # via nbconvert
     # via pyogrio
     # via qtconsole
     # via qtpy
-pandas==2.2.2
+    # via rioxarray
+    # via scikit-image
+    # via xarray
+pandas==2.0.0
     # via geopandas
+    # via openeo
     # via satellite-data-analytics
     # via seaborn
+    # via xarray
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.4
@@ -259,7 +317,9 @@ pexpect==4.9.0
     # via ipython
 pillow==10.4.0
     # via contextily
+    # via imageio
     # via matplotlib
+    # via scikit-image
 platformdirs==4.2.2
     # via jupyter-core
 prometheus-client==0.20.0
@@ -276,6 +336,8 @@ pure-eval==0.2.3
     # via stack-data
 pycparser==2.22
     # via cffi
+pygeos==0.14
+    # via satellite-data-analytics
 pygments==2.18.0
     # via ipython
     # via jupyter-console
@@ -289,13 +351,17 @@ pyparsing==3.1.2
 pyproj==3.6.1
     # via cartopy
     # via geopandas
+    # via rioxarray
 pyshp==2.3.1
     # via cartopy
+pystac==1.10.1
+    # via openeo
 python-dateutil==2.9.0.post0
     # via arrow
     # via jupyter-client
     # via matplotlib
     # via pandas
+    # via pystac
 python-json-logger==2.0.7
     # via jupyter-events
 pytz==2024.1
@@ -314,6 +380,8 @@ qtpy==2.4.1
     # via qtconsole
 rasterio==1.3.10
     # via contextily
+    # via earthpy
+    # via rioxarray
     # via satellite-data-analytics
 referencing==0.35.1
     # via jsonschema
@@ -321,37 +389,50 @@ referencing==0.35.1
     # via jupyter-events
 requests==2.32.3
     # via contextily
+    # via earthpy
+    # via folium
     # via jupyterlab-server
+    # via openeo
+    # via sentinelsat
 rfc3339-validator==0.1.4
     # via jsonschema
     # via jupyter-events
 rfc3986-validator==0.1.1
     # via jsonschema
     # via jupyter-events
+rioxarray==0.17.0
+    # via satellite-data-analytics
 rpds-py==0.19.1
     # via jsonschema
     # via referencing
+scikit-image==0.24.0
+    # via earthpy
 scikit-learn==1.5.1
     # via satellite-data-analytics
 scipy==1.14.0
-    # via satellite-data-analytics
+    # via scikit-image
     # via scikit-learn
 seaborn==0.13.2
     # via satellite-data-analytics
 send2trash==1.8.3
     # via jupyter-server
+sentinelsat==1.2.1
+    # via satellite-data-analytics
 setuptools==71.1.0
     # via jupyterlab
     # via rasterio
 shapely==2.0.5
     # via cartopy
     # via geopandas
+    # via openeo
 six==1.16.0
     # via asttokens
     # via bleach
+    # via fiona
     # via mplleaflet
     # via python-dateutil
     # via rfc3339-validator
+    # via satellite-data-analytics
 sniffio==1.3.1
     # via anyio
     # via httpx
@@ -366,6 +447,8 @@ terminado==0.18.1
     # via jupyter-server-terminals
 threadpoolctl==3.5.0
     # via scikit-learn
+tifffile==2024.7.24
+    # via scikit-image
 tinycss2==1.3.0
     # via nbconvert
 tornado==6.4.1
@@ -375,6 +458,8 @@ tornado==6.4.1
     # via jupyterlab
     # via notebook
     # via terminado
+tqdm==4.66.4
+    # via sentinelsat
 traitlets==5.14.3
     # via comm
     # via ipykernel
@@ -393,6 +478,8 @@ traitlets==5.14.3
     # via qtconsole
 types-python-dateutil==2.9.0.20240316
     # via arrow
+typing-extensions==4.12.2
+    # via ipython
 tzdata==2024.1
     # via pandas
 uri-template==1.3.0
@@ -410,5 +497,12 @@ websocket-client==1.8.0
     # via jupyter-server
 widgetsnbextension==4.0.11
     # via ipywidgets
+wrapt==1.16.0
+    # via deprecated
+xarray==2024.6.0
+    # via openeo
+    # via rioxarray
+    # via satellite-data-analytics
 xyzservices==2024.6.0
     # via contextily
+    # via folium

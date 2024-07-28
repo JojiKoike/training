@@ -28,7 +28,8 @@
         "mads-hartmann.bash-ide-vscode",
         "rogalmic.bash-debug",
         "foxundermoon.shell-format",
-        "timonwong.shellcheck"
+        "timonwong.shellcheck",
+        "ms-toolsai.jupyter"
       ],
       "settings": {
         "python.defaultInterpreterPath": "${workspaceFolder}/python-src/.venv/bin/python",
